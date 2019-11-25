@@ -126,17 +126,11 @@ func runDriver() {
 				defer resp.Body.Close()
 				data, err := ioutil.ReadAll(resp.Body)
 				if err != nil {
-					if rand.Intn(rate) == 0 {
-						os.Exit(0)
-					}
 					continue
 				}
 
 				slice := strings.Split(string(data), ":")
 				if len(slice) != 2 {
-					if rand.Intn(rate) == 0 {
-						os.Exit(0)
-					}
 					continue
 				}
 
