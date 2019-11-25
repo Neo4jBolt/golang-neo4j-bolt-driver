@@ -3,8 +3,8 @@ package golangNeo4jBoltDriver
 import (
 	"database/sql"
 	"database/sql/driver"
-	"github.com/johnnadratowski/golang-neo4j-bolt-driver/errors"
-	"github.com/johnnadratowski/golang-neo4j-bolt-driver/log"
+	"github.com/Neo4jBolt/golang-neo4j-bolt-driver/errors"
+	"github.com/Neo4jBolt/golang-neo4j-bolt-driver/log"
 	"io/ioutil"
 	"math/rand"
 	"net/http"
